@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paralaxx test </title>
+</head>
+<body>
+    <style>
+        body, html{
+            margin: 0; /*remove a margem padrão do navegador*/
+            padding: 0; /*remove o preenchimento padrão do navegador*/
+            height: 100%; /*define a altura da tela como 100% para permitir o efeito de paralaxe*/
+        }
+        .img1, .img2, .img3, .img4{
+            height: 100%; /*deixa a altura da tela em 100%*/
+            background-position: center; /*centraliza a imagem*/
+            background-repeat: no-repeat; /*evita que a imagem se repita*/
+            background-attachment: fixed; /*faz com que a imagem fique fixa enquanto o conteúdo rola*/
+            background-size: cover; /*faz com que a imagem cubra toda a área disponível, mantendo a proporção*/
+        }
+        .img1{
+            background-image: url(img/luano1.jpg);
+        } /*definir a imagem de fundo para a primeira seção*/
+        .img2{
+            background-image: url(img/luan2.jpg);
+        } /*definir a imagem de fundo para a segunda seção*/
+        .img3{
+            background-image: url(img/luan3.webp);
+        } /*definir a imagem de fundo para a terceira seção*/
+        .img4{
+            background-image: url(img/luan5.jpg);
+        } /*definir a imagem de fundo para a quarta seção*/
+        .conteudo{
+            background-color: black; /*define a cor de fundo para o conteúdo*/
+            color: white; /*define a cor do texto para branco*/
+            font-size: 20px; /*define o tamanho da fonte para 20 pixels*/
+            font-family: Verdana, Geneva, Tahoma, sans-serif; /*define a família da fonte*/
+            padding: 80px 40px; /*adiciona preenchimento ao redor do conteúdo para criar espaço entre o texto e as bordas da seção*/
+            line-height: 1.5em; /*define o espaçamento entre as linhas do texto*/
+            text-align: justify; /*alinha o texto para justificar, criando uma aparência mais organizada e uniforme*/
+        }
+        h2{
+            text-align: center; /*alinha o título ao centro*/
+        }
+        .contv{
+            background-color: rgb(243, 7, 7); /*define a cor de fundo para o conteúdo da segunda seção*/
+        }
+        .contf{
+            background-color: rgb(70, 2, 60);
+        } /*define a cor de fundo para o conteúdo da terceira seção*/
+    </style>
+</head>
+<body>
+    <div class="img1"></div> /*primeira seção com a imagem de fundo definida pela classe img1* /
+    <div class="conteudo"> /*conteúdo da primeira seção* /
+        <h2>Lorem ipsum dolor</h2> /*título da primeira seção* /
+        <p> /*parágrafo da primeira seção* /
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quidem voluptates illum fugiat qui numquam itaque inventore explicabo praesentium corrupti voluptate, culpa dolorum sed ipsum quo aspernatur iusto quibusdam mollitia?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam unde iste iusto, asperiores, exercitationem totam sunt tenetur officia nulla natus libero error. Eveniet ad porro deserunt repellat soluta velit quas.
+        </p>
+    </div> 
+    <div class="img2"></div> /*segunda seção com a imagem de fundo definida pela classe img2* /
+    <div class="conteudo contv"> /*conteúdo da segunda seção, com a classe contv para definir a cor de fundo* /
+        <h2>Lorem ipsum dolor</h2> /*título da segunda seção* /
+        <p> /*parágrafo da segunda seção* /
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quidem voluptates illum fugiat qui numquam itaque inventore explicabo praesentium corrupti voluptate, culpa dolorum sed ipsum quo aspernatur iusto quibusdam mollitia?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam unde iste iusto, asperiores, exercitationem totam sunt tenetur officia nulla natus libero error. Eveniet ad porro deserunt repellat soluta velit quas.
+        </p>
+    </div>  
+    <div class="img3"></div> /*terceira seção com a imagem de fundo definida pela classe img3* /
+    <div class="conteudo contf"> /*conteúdo da terceira seção, com a classe contf para definir a cor de fundo* /
+        <h2>Lorem ipsum dolor</h2> /*título da terceira seção* /
+         <p> /*parágrafo da terceira seção* /
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quidem voluptates illum fugiat qui numquam itaque inventore explicabo praesentium corrupti voluptate, culpa dolorum sed ipsum quo aspernatur iusto quibusdam mollitia?
+        <p> //parágrafo da terceira seção* /
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quidem voluptates illum fugiat qui numquam itaque inventore explicabo praesentium corrupti voluptate, culpa dolorum sed ipsum quo aspernatur iusto quibusdam mollitia?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam unde iste iusto, asperiores, exercitationem totam sunt tenetur officia nulla natus libero error. Eveniet ad porro deserunt repellat soluta velit quas.
+        </p>
+    </div>  
+    <div class="img4"></div> /*quarta seção com a imagem de fundo definida pela classe img4* /
+</body>
+</html>

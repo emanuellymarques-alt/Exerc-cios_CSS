@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio9</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+        body, html{/*aplica as seguintes propriedades tanto para o elemento body quanto para o elemento html*/
+            margin: 0; /*remove a margem padrão do navegador*/
+            padding: 0; /*remove o preenchimento padrão do navegador*/
+            height: 100%;/*define a altura da tela como 100% para permitir o efeito de paralaxe*/         
+        }
+        .cabe{ 
+            width: 100%; /*define a largura do cabeçalho como 100% da tela*/
+            height: 100px; /*define a altura do cabeçalho como 100 pixels*/
+            background-color: #e3e8dd; /*define a cor de fundo do cabeçalho como um tom claro de verde*/
+        }
+        input{ 
+            width: 20%; /*define a largura do campo de busca como 20% da tela*/
+            height: 30px; /*define a altura do campo de busca como 30 pixels*/
+            font-size: 18px;  /*define o tamanho da fonte do campo de busca como 18 pixels*/
+            margin-bottom: 10px; /*define a margem inferior do campo de busca como 10 pixels*/
+            background-color: #ffffff; /*define a cor de fundo do campo de busca como branco*/
+            border: solid rgb(1, 1, 1) 1.5px; /*define a borda do campo de busca como uma linha sólida de 1.5 pixels de largura e cor preta*/
+            border-radius: 10px; /*define o raio da borda do campo de busca como 10 pixels, arredondando os cantos*/
+            background-image: url(img/lupa.png); /*define a imagem de fundo do campo de busca como uma lupa, indicando que é um campo de pesquisa*/
+            background-size: 10%; /*define o tamanho da imagem de fundo como 10% do tamanho do campo de busca, para que a lupa fique proporcional ao campo*/
+            background-repeat: no-repeat; /*evita que a imagem de fundo se repita, garantindo que apenas uma lupa seja exibida no campo de busca*/
+            background-position:  top 5px right 10px; /*define a posição da imagem de fundo como 5 pixels do topo e 10 pixels da direita do campo de busca, para que a lupa fique alinhada à direita e um pouco afastada do topo*/
+            margin-top: 30px; /*define a margem superior do campo de busca como 30 pixels, para criar um espaço entre o campo e o topo do cabeçalho*/
+            margin-right: 20px; /*define a margem direita do campo de busca como 20 pixels, para criar um espaço entre o campo e a borda direita do cabeçalho*/
+            float: right; /*faz com que o campo de busca flutue para a direita dentro do cabeçalho, alinhando-o à direita do logo e dos itens do menu*/
+        }
+        .logo{
+            float: left; /*faz com que o logo flutue para a esquerda dentro do cabeçalho, alinhando-o à esquerda do campo de busca e dos itens do menu*/
+            text-indent: 20px; /*adiciona um recuo de 20 pixels à esquerda do logo, criando um espaço entre o logo e a borda esquerda do cabeçalho*/
+            width: 20%; /*define a largura do logo como 20% da tela, para que ele ocupe uma parte proporcional do cabeçalho*/
+        }
+        .cabe ul{
+            float: left; /*faz com que a lista de itens do menu flutue para a esquerda dentro do cabeçalho, alinhando-a à esquerda do campo de busca e à direita do logo*/
+            width: 50%; /*define a largura da lista de itens do menu como 50% da tela, para que ela ocupe uma parte proporcional do cabeçalho*/
+            margin: 0px 0px 0px 20px; /*define a margem da lista de itens do menu como 0 pixels para o topo, direita e inferior, e 20 pixels para a esquerda, criando um espaço entre a lista e o logo*/
+            line-height: 100px; /*define a altura da linha dos itens do menu como 100 pixels, para que eles fiquem centralizados verticalmente dentro do cabeçalho*/
+            text-align: center; /*alinha o texto dos itens do menu ao centro, para que eles fiquem centralizados horizontalmente dentro da lista*/
+        }
+        .cabe ul li{
+            text-decoration: none; /*remove a decoração de texto padrão dos itens do menu, como sublinhado ou negrito*/
+            display: inline; /*faz com que os itens do menu sejam exibidos em linha, um ao lado do outro, em vez de em uma lista vertical*/
+            padding: 20px; /*adiciona um preenchimento de 20 pixels ao redor de cada item do menu, criando um espaço entre os itens e tornando-os mais fáceis de clicar*/
+            color:  rgb(13, 66, 13);  /*define a cor do texto dos itens do menu como um tom escuro de verde, para que eles se destaquem contra o fundo claro do cabeçalho*/
+            font-family: 'Finger Paint', cursive; /*define a família da fonte dos itens do menu como 'Finger Paint', uma fonte cursiva e decorativa, para dar um estilo mais descontraído e artístico ao menu*/
+            font-size: 1.5em; /*define o tamanho da fonte dos itens do menu como 1.5 vezes o tamanho da fonte base, para que eles sejam maiores e mais legíveis dentro do cabeçalho*/
+            cursor: pointer; /*faz com que o cursor do mouse se transforme em uma mão ao passar sobre os itens do menu, indicando que eles são clicáveis*/
+        }
+        .cabe ul li:hover{
+            color:  rgb(55, 120, 31);  /*define a cor do texto dos itens do menu como um tom mais claro de verde ao passar o mouse sobre eles, para criar um efeito de destaque e interatividade*/ 
+        }
+
+
+
+        
+        .box1, .box2, .box3, .box4{
+            position: relative; /*define a posição dos elementos como relativa, permitindo que os elementos filhos sejam posicionados em relação a eles*/
+            height: 100%; /*deixa a altura da tela em 100%, para que as imagens de fundo ocupem toda a altura disponível*/
+            opacity: 0.7; /*define a opacidade dos elementos como 0.7, tornando as imagens de fundo um pouco transparentes para que o conteúdo sobreposto seja mais legível*/
+            background-repeat: no-repeat; /*evita que as imagens de fundo se repitam, garantindo que cada imagem seja exibida apenas uma vez em cada seção*/
+            background-size: cover; /*faz com que a imagem de fundo cubra toda a área do elemento, mantendo a proporção original*/
+            background-attachment: fixed; /*faz com que as imagens de fundo fiquem fixas enquanto o conteúdo rola, criando um efeito de paralaxe onde as imagens parecem se mover mais lentamente do que o conteúdo em primeiro plano*/      
+        } 
+        .box1{
+            background-image: url(img/bAP.gif);
+        }
+        .box2{
+            background-image: url(img/foto02.jpg);
+        }
+        .box3{
+            background-image: url(img/foto03.jpg);
+        }
+        .box4{
+            background-image: url(img/foto04.jpg);
+        }
+        
+        .cont-img{
+            position: absolute; /*define a posição dos elementos como absoluta, permitindo que eles sejam posicionados em relação ao elemento pai com posição relativa (box1, box2, box3, box4)*/
+            top: 45%; /*define a posição vertical dos elementos como 45% a partir do topo do elemento pai, centralizando-os verticalmente dentro das seções*/
+            width: 100%; /*define a largura dos elementos como 100% da largura do elemento pai, para que eles ocupem toda a largura disponível dentro das seções*/
+            text-align: center; /*alinha o texto dentro dos elementos ao centro, para que os títulos fiquem centralizados horizontalmente dentro das seções*/
+        }
+        .cont-img span.titulo{
+           background-color: rgb(13, 66, 13);
+           color: #ffffff;/*define a cor do texto dos títulos como branco, para que eles se destaquem contra o fundo verde*/   
+           padding: 20px; /*adiciona um preenchimento de 20 pixels ao redor dos títulos, criando um espaço entre o texto e as bordas do fundo verde*/
+           font-size: 20px; /*define o tamanho da fonte dos títulos como 20 pixels, para que eles sejam legíveis e se destaquem dentro das seções*/
+           letter-spacing: 5px;  /*define o espaçamento entre as letras dos títulos como 5 pixels, para criar um efeito de espaçamento e dar um estilo mais moderno e elegante aos títulos*/   
+        }
+
+        .conteudo{
+            background-color: #e3e8dd; /*define a cor de fundo do conteúdo como um tom claro de verde, para criar um contraste suave com as imagens de fundo e manter a harmonia visual do site*/
+            color: rgb(13, 66, 13);  /*define a cor do texto do conteúdo como um tom escuro de verde, para que ele seja legível e se destaque contra o fundo claro do conteúdo*/
+            text-align: justify; /*alinha o texto do conteúdo para justificar, criando uma aparência mais organizada e uniforme, onde as linhas de texto se estendem até as margens esquerda e direita do conteúdo*/
+            padding: 50px 100px 40px 100px; /*adiciona um preenchimento de 50 pixels no topo, 100 pixels nas laterais e 40 pixels na parte inferior do conteúdo, criando um espaço confortável ao redor do texto e melhorando a legibilidade*/
+            background-image: url(Imagem/mold01.png); /*define a imagem de fundo do conteúdo como uma moldura decorativa, para adicionar um elemento visual interessante e complementar o tema da natureza do site*/
+            background-repeat: no-repeat; /*evita que a imagem de fundo se repita, garantindo que a moldura seja exibida apenas uma vez ao redor do conteúdo*/
+            background-size: cover; /*faz com que a imagem de fundo cubra toda a área do conteúdo, mantendo a proporção original da moldura e garantindo que ela se encaixe adequadamente ao redor do texto*/
+            background-position: center; /*centraliza a imagem de fundo dentro do conteúdo, garantindo que a moldura fique alinhada e equilibrada em relação ao texto*/
+        }
+
+        h2{
+            text-transform: uppercase; /*transforma o texto dos títulos em letras maiúsculas, para dar um destaque visual e criar uma hierarquia clara entre os títulos e o restante do conteúdo*/
+            color: rgb(13, 66, 13);  /*define a cor do texto dos títulos como um tom escuro de verde, para que eles se destaquem contra o fundo claro do conteúdo e mantenham a consistência visual com os itens do menu*/
+            text-align: center; /*alinha os títulos ao centro, para que eles fiquem centralizados horizontalmente dentro do conteúdo e criem um equilíbrio visual com o restante do texto justificado*/
+        }
+
+        .roda{
+            margin-top: -20px; /*define uma margem negativa de 20 pixels no topo da seção de rodapé, para que ela se sobreponha um pouco ao conteúdo anterior e crie uma transição suave entre as seções*/
+            height: 330px; /*define a altura da seção de rodapé como 330 pixels, para que ela seja suficientemente alta para acomodar o conteúdo e os elementos visuais do rodapé, como o texto e os ícones de redes sociais*/
+            background-color: #e3e8dd; /*define a cor de fundo do rodapé como um tom claro de verde, para manter a harmonia visual com o restante do site e criar um contraste suave com o texto e os ícones de redes sociais*/
+        }
+        .roda .down_up{
+            text-align: center; /*alinha o texto da parte superior do rodapé ao centro, para que ele fique centralizado horizontalmente dentro do rodapé e crie um equilíbrio visual com o restante do conteúdo do rodapé*/
+            color:  rgb(13, 66, 13);   /*define a cor do texto da parte superior do rodapé como um tom escuro de verde, para que ele se destaque contra o fundo claro do rodapé e mantenha a consistência visual com os itens do menu e os títulos do conteúdo*/
+            font-family: 'Finger Paint', cursive; /*define a família da fonte da parte superior do rodapé como 'Finger Paint', uma fonte cursiva e decorativa, para dar um estilo mais descontraído e artístico ao rodapé, complementando o estilo do menu e dos títulos do conteúdo*/
+            font-size: 4em; /*define o tamanho da fonte da parte superior do rodapé como 4 vezes o tamanho da fonte base, para que ele seja grande e se destaque como um elemento visual importante dentro do rodapé, criando um impacto visual forte e atraente para os visitantes do site*/
+        }
+        .roda .down_meio{
+            text-align: center; /*alinha o texto da parte do meio do rodapé ao centro, para que ele fique centralizado horizontalmente dentro do rodapé e crie um equilíbrio visual com o restante do conteúdo do rodapé*/
+            color:  rgb(13, 66, 13);   /*define a cor do texto da parte do meio do rodapé como um tom escuro de verde, para que ele se destaque contra o fundo claro do rodapé e mantenha a consistência visual com os itens do menu e os títulos do conteúdo*/
+            font-family: 'Finger Paint', cursive; /*define a família da fonte da parte do meio do rodapé como 'Finger Paint', uma fonte cursiva e decorativa, para dar um estilo mais descontraído e artístico ao rodapé, complementando o estilo do menu e dos títulos do conteúdo*/
+            font-size: 1.5em; /*define o tamanho da fonte da parte do meio do rodapé como 1.5 vezes o tamanho da fonte base, para que ele seja visível e legível dentro do rodapé, mantendo a hierarquia visual com os outros elementos*/
+        }
+        .roda .down_down{
+            text-align: center; /*alinha o conteúdo da parte inferior do rodapé ao centro, para que os ícones de redes sociais fiquem centralizados horizontalmente dentro do rodapé e criem um equilíbrio visual com o restante do conteúdo do rodapé*/
+        }
+        .roda .down_down img{
+            width: 40px; /*define a largura dos ícones de redes sociais como 40 pixels, para que eles sejam visíveis e legíveis dentro do rodapé, mantendo uma proporção adequada em relação ao restante do conteúdo do rodapé*/
+            border-radius: 25px; /*define o raio da borda dos ícones de redes sociais como 25 pixels, para que eles tenham cantos arredondados e criem um estilo mais suave e amigável, complementando o tema da natureza do site*/
+            border: 4px rgb(13, 66, 13) dotted; /*define a borda dos ícones de redes sociais como uma linha pontilhada de 4 pixels de largura e cor verde escura, para criar um destaque visual e um estilo mais decorativo, complementando o tema da natureza do site*/
+            cursor: pointer; /*faz com que o cursor do mouse se transforme em uma mão ao passar sobre os ícones de redes sociais, indicando que eles são clicáveis e incentivando os visitantes a interagir com eles*/
+            margin: 20px; /*define uma margem de 20 pixels ao redor dos ícones de redes sociais, para criar um espaço entre eles e evitar que fiquem muito próximos uns dos outros, melhorando a estética visual do rodapé e facilitando a interação dos visitantes com os ícones*/
+            padding: 5px; /*adiciona um preenchimento de 5 pixels ao redor dos ícones de redes sociais, para criar um espaço entre a borda pontilhada e a imagem dos ícones, melhorando a estética visual do rodapé e destacando os ícones de forma mais eficaz*/
+        } 
+        </style>
+
+</head>
+<body>
+
+    <div class="cabe">
+        <div class="logo">
+            <img src="img/logo_natu (1).png">
+        </div>
+        <div>
+            <ul>
+                <li>HOME</li>
+                <li>SERVIÇOS</li>
+                <li>PRODUTOS</li>
+                <li>SOBRE</li>
+            </ul>
+        </div>
+        <input class="pesq" type="text" name="pesq" placeholder="Pesquisar">
+    </div>
+
+    <div class="box1">
+        <div class="cont-img">
+            <span class="titulo">NATUREZA É REAL</span>
+        </div>
+    </div>
+    <div class="conteudo">
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero esse necessitatibus quam quis ut, fugit soluta mollitia totam dicta exercitationem nobis maiores odio aliquam autem eius aliquid! Corrupti, dolore eaque?
+        </p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, deserunt sequi, temporibus maiores pariatur quisquam porro eligendi eius error adipisci qui corrupti iusto quod iure mollitia praesentium voluptates quia! Voluptates.</p>
+    </div>
+    <div class="box2">
+            <div class="cont-img">
+                <span class="titulo">NATUREZA É VIVA</span>
+            </div>
+    </div>
+    <div class="conteudo">
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero esse necessitatibus quam quis ut, fugit soluta mollitia totam dicta exercitationem nobis maiores odio aliquam autem eius aliquid! Corrupti, dolore eaque?
+        </p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, deserunt sequi, temporibus maiores pariatur quisquam porro eligendi eius error adipisci qui corrupti iusto quod iure mollitia praesentium voluptates quia! Voluptates.</p>
+    </div>
+    <div class="box3">
+        <div class="cont-img">
+            <span class="titulo">NATUREZA É NOSSA</span>
+        </div>
+    </div>
+    <div class="conteudo">
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero esse necessitatibus quam quis ut, fugit soluta mollitia totam dicta exercitationem nobis maiores odio aliquam autem eius aliquid! Corrupti, dolore eaque?
+        </p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, deserunt sequi, temporibus maiores pariatur quisquam porro eligendi eius error adipisci qui corrupti iusto quod iure mollitia praesentium voluptates quia! Voluptates.</p>
+    </div>
+    <div class="box4">
+        <div class="cont-img">
+            <span class="titulo">NATUREZA É VIDA</span>
+        </div>
+    </div>
+
+    <div class="roda">
+        <br><br><br>
+        <div class="down_up">NATUREZA</div>
+        <div class="down_meio">Lorem ipsum dolor sit amet consectetur adipisicing elit
+            <br>#NATUREZA</div>
+        <div class="down_down">
+            <a href="https://pt-br.facebook.com/" target="_blank"><img src="img/face_logo_01.png"></a>
+            <a href="https://web.whatsapp.com/" target="_blank"><img src="img/whats_logo_01.png"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="img/inst_logo_01.png"></a>
+        </div>
+    </div>
+
+</body>
+</html>
